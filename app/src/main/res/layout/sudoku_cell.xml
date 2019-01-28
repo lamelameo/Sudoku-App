@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cellTest"
+    android:layout_width="37dp"
+    android:layout_height="37dp">
+
+    <com.example.lamelameo.sudoku.SudokuCell
+        android:id="@+id/celll"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:background="@drawable/cell_button_background"
+        custom:showPencil="false"
+        custom:showValue="false" />
+
+</FrameLayout>

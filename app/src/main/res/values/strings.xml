@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="button1">1</string>
+    <string name="buttonon">ON</string>
+    <string name="buttonoff">OFF</string>
+    <string name="pencilbutton">pencil</string>
+    <string name="eraserbutton">eraser</string>
+    <string name="emptybutton"> </string>
+    <string name="checkbutton">Check</string>
+    <string name="title_activity_game_screen">GameScreen</string>
+    <string name="grid_test">GridTest</string>
+    <string name="testing">testing</string>
+    <string name="penciltest">\u00201\u0020\u00202\u0020\u00203\n\u00204\u0020\u00205\u0020\u00206\n\u00207\u0020\u00208\u0020\u00209</string>
+    <string name="testest">\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u00203\n\u0020\u0020\u0020\u0020\u00205\u0020\u00206\n
+        \u00207\u0020\u00208\u0020\u00209</string>
+
+    <!-- start screen button text -->
+    <string name="StartScreen">New Puzzle</string>
+    <string name="easy">easy</string>
+    <string name="medium">medium</string>
+    <string name="hard">hard</string>
+    <string name="load">load</string>
+
+    <!-- strings for puzzle difficulty (+ filename) -->
+    <string name="hardpuzzle">Difficulty: HARD</string>
+    <string name="mediumpuzzle">Difficulty: MEDIUM</string>
+    <string name="easypuzzle">Difficulty: EASY</string>
+
+    <string name="zero"> </string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="title_activity_grid_layout_test">grid_layout_test</string>
+
+</resources>

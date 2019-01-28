@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#798be5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- DEFAULT -->
+    <color name="DefaultMain">#26274d</color>
+    <color name="Default2">#5b5ca1</color>
+    <color name="DefaultAccent">#acadea</color>
+    <!-- DARK -->
+    <color name="DarkThemeMain">#000000</color>
+    <color name="DarkTheme2">#4f4f4f</color>
+    <color name="DarkThemeAccent">#e6e6e6</color>
+    <!-- UGLY -->
+    <color name="UglyMain">#16360c</color>
+    <color name="Ugly2">#2e7818</color>
+    <color name="UglyAccent">#3df205</color>
+
+    <!-- <array name="Themes">
+    <item>
+        <color name="DefaultMain">#26274d</color>
+        <color name="Default2">#5b5ca1</color>
+        <color name="DefaultAccent">#acadea</color></item>
+    <item>
+        <color name="DarkThemeMain">#000000</color>
+        <color name="DarkTheme2">#4f4f4f</color>
+        <color name="DarkThemeAccent">#ffffff</color></item>
+    <item>
+        <color name="UglyMain">#16360c</color>
+        <color name="Ugly2">#2e7818</color>
+        <color name="UglyAccent">#3df205</color></item>
+    </array> -->
+
+</resources>

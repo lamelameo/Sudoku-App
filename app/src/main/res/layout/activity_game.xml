@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".grid_layout_test">
+
+    <Button
+        android:id="@+id/checkButton2"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/checkbutton"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ToggleButton
+        android:id="@+id/pencilButton2"
+        android:layout_width="85dp"
+        android:layout_height="60dp"
+        android:background="@drawable/pencil_background"
+        android:textOff="@string/emptybutton"
+        android:textOn="@string/emptybutton"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toEndOf="@+id/RadioGroup1"
+        app:layout_constraintTop_toBottomOf="@+id/eraserButton2" />
+
+    <ToggleButton
+        android:id="@+id/eraserButton2"
+        android:layout_width="85dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/eraser_background"
+        android:textOff="@string/emptybutton"
+        android:textOn="@string/emptybutton"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toEndOf="@+id/RadioGroup1"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroup1"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout">
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set1"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/one" />
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set2"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/two" />
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set3"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/three" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup2"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroup1">
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set4"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/four" />
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set5"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/five" />
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set6"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/six" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup3"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroup2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set7"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/seven" />
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set8"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/eight" />
+
+        <com.example.lamelameo.sudoku.CustomRadioButton
+            android:id="@+id/Set9"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/nine" />
+    </RadioGroup>
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="343dp"
+        android:layout_height="343dp"
+        android:background="@drawable/grid_back343"
+        app:columnCount="9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211"
+        app:rowCount="9">
+
+    </android.support.v7.widget.GridLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SudokuCell"
+    android:layout_width="37dp"
+    android:layout_height="37dp"
+    android:background="@drawable/rb_default">
+
+    <TextView
+        android:id="@+id/startingValue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
+
+<!-- TODO: below code removes unnecessary constraint layout and leaves root of file to be text view -->
+<!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/startingValue"-->
+    <!--android:layout_width="37dp"-->
+    <!--android:layout_height="37dp"-->
+    <!--android:gravity="center"-->
+    <!--android:textColor="@android:color/black"-->
+    <!--android:background="@drawable/rb_default">-->
+
+<!--</TextView>-->

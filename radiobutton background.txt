@@ -1,0 +1,27 @@
+
+    <item android:state_checked="true" >
+            <shape android:shape="rectangle">
+                <corners android:radius="5dp" />
+                <solid android:color="@android:color/background_dark" />
+                <stroke android:width="2dp"
+                        android:color="@color/colorAccent" />
+            </shape>
+    </item>
+
+    <item android:state_pressed="true" >
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp" />
+            <solid android:color="@android:color/background_dark" />
+            <stroke android:width="2dp"
+                    android:color="@color/colorAccent" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle" >
+            <corners android:radius="5dp" />
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="2dp"
+                    android:color="@color/DefaultMain" />
+        </shape>
+    </item>
