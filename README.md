@@ -1,5 +1,5 @@
 # Sudoku
-A simple, incomplete (but functional) sudoku app for android devices. Currently, the user has the choice of 50 easy puzzles obtained from a list from a Project Euler problem: https://projecteuler.net/problem=96. 
+A simple, incomplete (but functional) sudoku app for android devices which I created as an effort to learn java/app development. Currently, the user has the choice of 50 easy puzzles obtained from a list from a Project Euler problem: https://projecteuler.net/problem=96. 
 
 Designed and tested only on a Samsung A3 (2017) with dimensions: 720 x 1280 pixels, 16:9 ratio. Smaller phones may not be compatible. Requires mininmum API version: 17 (Jelly Bean).
 
