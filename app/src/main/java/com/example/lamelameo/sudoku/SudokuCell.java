@@ -6,19 +6,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
-import android.support.annotation.Nullable;
 import android.text.DynamicLayout;
-import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
@@ -104,6 +99,10 @@ class SudokuCell extends View {
         int canvasWidth = canvas.getWidth();
         int canvasHeight = canvas.getHeight();
 
+        // fill in cell with White
+        mPaint.setColor(Color.WHITE);
+        canvas.drawRect(0, 0, canvasWidth, canvasHeight, mPaint);
+
         // draw cell outline
         float[] outline = {
                 0, 0, canvasWidth, 0,
@@ -111,9 +110,10 @@ class SudokuCell extends View {
                 0, canvasHeight, canvasWidth, canvasHeight,
                 0, 0, 0, canvasHeight
         };
-        mPaint.setStrokeWidth(1*screenDensity);  // 1dp line width
+        mPaint.setColor(Color.BLACK);
+        mPaint.setStrokeWidth(1*screenDensity);  // 1dp line width (converted to pixels)
         canvas.drawLines(outline, mPaint);
-        // TODO: draws crosshairs that intersect the middle of cell
+        // TODO: draws crosshairs that intersect the middle of cell (for testing purposes)
 //        mPaint.setColor(Color.CYAN);
 //        canvas.drawLine(0f, canvasHeight/2f, canvasWidth, canvasHeight/2f, mPaint);
 //        canvas.drawLine(canvasWidth/2f, 0f, canvasWidth/2f, canvasHeight, mPaint);
@@ -158,7 +158,7 @@ class SudokuCell extends View {
                 //  -1,-1   0,-1   1,-1
                 //  -1, 0   0, 0   1, 0
                 //  -1, 1   0, 1   1, 1
-                double paddingX = 3.5 * screenDensity;  // padding between pencil values (in DP)
+                double paddingX = 3.5 * screenDensity;  // padding between pencil values (dp converted to px)
                 double paddingY = 1.5 * screenDensity;
                 double pencilX = centreX + (textWidth + paddingX)*(intColIndex - 1);
                 double pencilY = centreY + (textHeight + paddingY)*(intRowIndex - 1);
@@ -185,7 +185,7 @@ class SudokuCell extends View {
 
             canvas.drawText(value, textX, textY, mTextPaint);
 
-            CharSequence val = value;
+//            CharSequence val = value;
 //            DynamicLayout dynamicLayout = new DynamicLayout(val, mTextPaint, textWidth, Layout.Alignment.ALIGN_CENTER,
 //                    1.0f, 0, false);
 //            dynamicLayout.draw(canvas);

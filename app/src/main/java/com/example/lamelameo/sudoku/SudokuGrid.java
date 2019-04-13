@@ -8,6 +8,8 @@ import android.view.View;
 import android.graphics.Rect;
 
 public class SudokuGrid extends View {
+    //TODO: could use this single view as only view for grid and get coordinates on click to determine which cell was
+    //  clicked instead of using actual views for each cell
 
     private int value = 0;  // value currently set in position - 0 default = empty cell
     private int [] pencil_values;  // array for integers for pencilled in values

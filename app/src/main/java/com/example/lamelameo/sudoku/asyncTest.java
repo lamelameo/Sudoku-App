@@ -14,9 +14,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class GameScreen extends AppCompatActivity {
+public class asyncTest extends AppCompatActivity {
 
-    private String TAG = "GameScreen";
+    private String TAG = "asyncTest";
 
     private CharSequence puzzle = "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
 
@@ -63,7 +63,7 @@ public class GameScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_screen);
+        setContentView(R.layout.activity_async_test);
 
         // set variables for rows in relative layout to inflate views into
         TableRow tableRow1 = findViewById(R.id.tableRow1);

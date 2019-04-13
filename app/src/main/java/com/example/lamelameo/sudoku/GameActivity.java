@@ -3,15 +3,11 @@ package com.example.lamelameo.sudoku;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
-import android.support.v4.view.AsyncLayoutInflater;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.GridLayout;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
@@ -20,9 +16,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class grid_layout_test extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
-    private String TAG = "grid_layout_test";
+    private String TAG = "GameActivity";
 
     private CharSequence[] easyPuzzles = {
             // list of 50 'easy' sudoku puzzle starting states
@@ -84,12 +80,10 @@ public class grid_layout_test extends AppCompatActivity {
 
     // dptopx that accepts a floating point value input and context outputs an int with units of pixels
     private int dpToPx(float dp, Context context) {
-        float density = context.getResources().getDisplayMetrics().density;
-        long pixels = Math.round(dp * density); // rounds up/down around 0.5
-//        Log.i("tag", "dpToPx: "+pixels);
+        float screenDensity = getResources().getDisplayMetrics().density;
+        long pixels = Math.round(dp * screenDensity); // rounds up/down around 0.5
         //TODO: can change to this one line instead...?
 //        int pix = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics()));
-//        Log.i("tagtag", "dp to Px: "+pix);
         return (int) pixels;
     }
 
@@ -192,7 +186,7 @@ public class grid_layout_test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grid_layout_test);
+        setContentView(R.layout.activity_game);
         final GridLayout gridLayout = findViewById(R.id.gridLayout);
 
         final Button checkButton = findViewById(R.id.checkButton2);
@@ -256,14 +250,27 @@ public class grid_layout_test extends AppCompatActivity {
             }
         });
 
-        // convert dp to px for the grid column margins and cell size - used outside loop so only 1 call needed
-        int margin2dp = dpToPx(2, this);
-        int margin3dp = dpToPx(3, this);
-        int cellSize = dpToPx(37, this);
-        ViewGroup.LayoutParams layoutSize = new ViewGroup.LayoutParams(cellSize, cellSize);
+        // convert dp to px for the grid column margins - used outside loop so only 1 call needed
+        // each cell has 1dp border, so middle margins must be 2dp and edge margins 3dp to total 4dp thick grid borders
+        final int margin2dp = dpToPx(2, this);
+        final int margin3dp = dpToPx(3, this);
+        // margin between grid and edge of screen
+        final int margin4dp = dpToPx(4, this);
+        int wrap = ViewGroup.LayoutParams.WRAP_CONTENT;
 
-        // made an inflater instance out of loop so we dont make 81 of them
-        LayoutInflater layoutInflater = getLayoutInflater();
+        ViewGroup.LayoutParams gridMargins = gridLayout.getLayoutParams();
+        gridMargins.height = wrap;
+        gridMargins.width = wrap;
+        ((ViewGroup.MarginLayoutParams)gridMargins).setMargins(margin4dp, margin4dp, margin4dp, 0);
+
+        // determine largest cell size possible given the devices width (pixels)
+        float screenSize = getResources().getDisplayMetrics().widthPixels;
+        // need to account for margins associated with the grid and cells
+        int marginsPx = (margin2dp + margin3dp + margin4dp)*2;
+        // rounds down to nearest integer, as we want a whole number less than the maximum
+        // 4dp x 2 margins between side of grid and screen, 3dp x 2 + 2dp x 2 for margins between grid blocks = 18dp
+        int maxCellSize = (int)(screenSize - marginsPx)/9;
+        ViewGroup.LayoutParams layoutSize = new ViewGroup.LayoutParams(maxCellSize, maxCellSize);
 
         // get the puzzle number to set associated starting values
         int puzzle = getIntent().getIntExtra("puzzle number", 1) - 1;
@@ -275,7 +282,7 @@ public class grid_layout_test extends AppCompatActivity {
         for(int i = 0; i < 9; i++){
             for(int h = 0; h < 9; h++){
                 int index = i * 9 + h;
-                Log.i("gridLayoutTest", "index: "+index);
+//                Log.i("gridLayoutTest", "index: "+index);
 
                 // value of 0 means no starting value
                 final SudokuCell sudokuCell = new SudokuCell(this);
@@ -351,7 +358,8 @@ public class grid_layout_test extends AppCompatActivity {
                     gridLayout.addView(sudokuCell, index);
                 }
 
-                //setting margins for cells to line them up with background image - 2dp for middle margins as cell adds 2px
+                // Setting margins for cells to line them up with background image so blocks have a thicker border
+                // 2dp for middle margins as cell adds 2 x 1dp border, 3dp for edges as cells add 1 x 1dp border
                 ViewGroup.MarginLayoutParams cellMargin = (ViewGroup.MarginLayoutParams)gridLayout.getChildAt(index).getLayoutParams();
                 if (h==2 || h==5) {  // add right margin for columns 3,6,9
                     cellMargin.rightMargin = margin2dp;

@@ -4,54 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".grid_layout_test">
+    tools:context=".GameActivity">
 
     <Button
         android:id="@+id/checkButton2"
         android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
         android:text="@string/checkbutton"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/RadioGroup1"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
     <ToggleButton
         android:id="@+id/pencilButton2"
-        android:layout_width="85dp"
-        android:layout_height="60dp"
+        android:layout_width="75.75dp"
+        android:layout_height="22.25dp"
         android:background="@drawable/pencil_background"
         android:textOff="@string/emptybutton"
         android:textOn="@string/emptybutton"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toEndOf="@+id/RadioGroup1"
         app:layout_constraintTop_toBottomOf="@+id/eraserButton2" />
 
     <ToggleButton
         android:id="@+id/eraserButton2"
-        android:layout_width="85dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="82.4dp"
+        android:layout_height="49dp"
         android:background="@drawable/eraser_background"
         android:textOff="@string/emptybutton"
         android:textOn="@string/emptybutton"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/RadioGroup1"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/checkButton2" />
 
     <RadioGroup
         android:id="@+id/RadioGroup1"
-        android:layout_width="201dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.229"
@@ -88,13 +84,11 @@
 
     <RadioGroup
         android:id="@+id/RadioGroup2"
-        android:layout_width="201dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RadioGroup1">
 
@@ -128,15 +122,13 @@
 
     <RadioGroup
         android:id="@+id/RadioGroup3"
-        android:layout_width="201dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RadioGroup2"
         app:layout_constraintVertical_bias="0.0">
@@ -171,16 +163,15 @@
 
     <android.support.v7.widget.GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="343dp"
-        android:layout_height="343dp"
-        android:background="@drawable/grid_back343"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_dark"
         app:columnCount="9"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211"
         app:rowCount="9">
 
     </android.support.v7.widget.GridLayout>

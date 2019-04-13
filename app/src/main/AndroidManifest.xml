@@ -17,8 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GameScreen"
-            android:label="@string/title_activity_game_screen">
+            android:name=".asyncTest">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -32,16 +31,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".GridTest">
+        <activity android:name=".GameActivity">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+            <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".grid_layout_test"
-            android:label="@string/title_activity_grid_layout_test"></activity>
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter></activity>
     </application>
 
 </manifest>
