@@ -321,8 +321,10 @@ public class GameActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 //                            if(!eraserButton.isChecked() && checkRBs(radioButtons) == null && !pencilButton.isChecked()) {
-//                                //TODO: no buttons checked - do something?
+//                                //no buttons checked - do something?
 //                            }
+                            //TODO: BUG - PLACED VALUE THEN PENCIL AND BOTH WERE SHOWN AT SAME TIME. UNSURE HOW TO RECREATE
+                            //  ONLY HAPPENED AFTER ADDING WHITE BACKGROUND EACH REDRAW (I THINK) - CHECK CODE HERE
 
                             // if eraser is active no radiobuttons can be active, so process eraser clicks first
                             String emptybutton = "";
